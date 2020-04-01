@@ -3,6 +3,7 @@ require("dotenv").config();
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
+const bookRoutes = require("./routes/book");
 
 // init the app
 const app = express();
@@ -13,6 +14,7 @@ app.use(express.json());
 
 // routes middlewares
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/book", bookRoutes);
 
 // connect the db
 mongoose.connect(
